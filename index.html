@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" data-theme-pref="system">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mr. Defendable — Sovereign CRE Intelligence</title>
+<meta name="description" content="The intelligence comes to the lease. The lease never leaves. Sovereign, on-prem CRE underwriting and deal intelligence for the brokers who actually close. Verified. Vetted. Defendable.">
+<meta property="og:title" content="Mr. Defendable — Sovereign CRE Intelligence">
+<meta property="og:description" content="The intelligence comes to the lease. The lease never leaves. Verified. Vetted. Defendable.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191c1a'/%3E%3Cpath d='M16 4l10 4v8c0 6-4.2 10.5-10 12C10.2 26.5 6 22 6 16V8z' fill='none' stroke='%23c88a1b' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Newsreader:ital,opsz,wght@1,18..72,400;1,18..72,500;0,18..72,400;0,18..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* =========================================================================
+   MR. DEFENDABLE — landing base. Brand palette "Honey & Ink" (locked).
+   Layout: dark sovereign hero → doctrine sections on stone → honey close.
+   This is a BASE. Hack/agent modules insert at the [data-slot] mount points.
+   ========================================================================= */
+:root{
+  --paper:#f1f0ec; --paper-2:#e8e6df; --ink:#191c1a; --ink-2:#23262300; --ink-soft:#4c514c; --ink-faint:#7b7f79;
+  --line:#d2cfc6; --line-strong:#b9b5a9;
+  --honey:#a8741a; --honey-ink:#8a5f12; --honey-bright:#c88a1b;
+  --bank:#2f6b4c; --bank-bg:#e3ece4;
+  --crick:#a1361f; --crick-bg:#f0e1dc;
+  --card:#f8f7f4; --card-line:#dcd9d0;
+  --vault:#0e1013; --vault-2:#15181b; --vault-line:#2a2e31; --vault-text:#ece9e1; --vault-soft:#a7a99f;
+  --font-display:"Libre Franklin",system-ui,-apple-system,sans-serif;
+  --font-serif:"Newsreader",Georgia,serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;
+  color-scheme:light;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+  --paper:#16181a; --paper-2:#1d2023; --ink:#eceae3; --ink-soft:#b2b3ac; --ink-faint:#83857e;
+  --line:#2d3135; --line-strong:#3c4146; --honey:#e0a63c; --honey-ink:#eab657; --honey-bright:#e0a63c;
+  --bank:#64b88a; --bank-bg:#1c2a22; --crick:#e07555; --crick-bg:#2c201c;
+  --card:#1b1e21; --card-line:#30343a;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#16181a; --paper-2:#1d2023; --ink:#eceae3; --ink-soft:#b2b3ac; --ink-faint:#83857e;
+  --line:#2d3135; --line-strong:#3c4146; --honey:#e0a63c; --honey-ink:#eab657; --honey-bright:#e0a63c;
+  --bank:#64b88a; --bank-bg:#1c2a22; --crick:#e07555; --crick-bg:#2c201c;
+  --card:#1b1e21; --card-line:#30343a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-display);
+  font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+img{max-width:100%}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:800;letter-spacing:-.025em;line-height:1.03}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(20px,5vw,56px)}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--honey-ink)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.serif{font-family:var(--font-serif)}
+.rule{height:1px;background:var(--line-strong);border:0}
+section{padding-block:clamp(52px,8vw,104px)}
+
+/* ---- top bar ---- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--vault) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--vault-line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--vault-text);font-size:1.02rem}
+.logo svg{width:24px;height:24px;flex:none}
+.logo b{color:var(--honey-bright)}
+.navlinks{display:flex;gap:22px;font-size:.84rem;color:var(--vault-soft)}
+.navlinks a{text-decoration:none;transition:color .15s}
+.navlinks a:hover{color:var(--honey-bright)}
+.pill{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--honey-bright);border:1px solid color-mix(in srgb,var(--honey-bright) 40%,transparent);
+  padding:6px 11px;border-radius:999px;white-space:nowrap}
+@media(max-width:720px){.navlinks{display:none}}
+
+/* ---- hero (vault / sovereign) ---- */
+.hero{background:
+    radial-gradient(120% 90% at 82% -10%, color-mix(in srgb,var(--honey-bright) 16%,transparent) 0%, transparent 55%),
+    linear-gradient(180deg, var(--vault) 0%, var(--vault-2) 100%);
+  color:var(--vault-text);position:relative;overflow:hidden;border-bottom:1px solid var(--vault-line)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--vault-line) 1px,transparent 1px),linear-gradient(90deg,var(--vault-line) 1px,transparent 1px);
+  background-size:52px 52px;opacity:.14;mask-image:radial-gradient(120% 80% at 50% 0%,#000 30%,transparent 75%)}
+.hero .wrap{position:relative;z-index:1}
+.hero .eyebrow{color:var(--honey-bright)}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);color:var(--vault-text);margin-top:16px;font-weight:900}
+.hero h1 .amp{color:var(--honey-bright)}
+.hero .lede{font-family:var(--font-serif);font-size:clamp(1.15rem,3vw,1.6rem);line-height:1.4;
+  color:color-mix(in srgb,var(--vault-text) 84%,transparent);max-width:30ch;margin-top:22px}
+.hero .lede b{color:var(--vault-text);font-weight:500}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{font-family:var(--font-display);font-weight:600;font-size:.92rem;text-decoration:none;
+  padding:13px 22px;border-radius:4px;transition:transform .12s, background .15s;display:inline-flex;align-items:center;gap:9px}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--honey-bright);color:#1a1205}
+.btn-primary:hover{background:#d99a2e}
+.btn-ghost{border:1px solid color-mix(in srgb,var(--vault-text) 28%,transparent);color:var(--vault-text)}
+.btn-ghost:hover{border-color:var(--honey-bright);color:var(--honey-bright)}
+.creed{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px;font-family:var(--font-mono);font-size:.7rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--honey-bright)}
+.creed span{border:1px solid var(--vault-line);border-radius:3px;padding:7px 12px;color:var(--vault-soft)}
+.creed span b{color:var(--honey-bright);font-weight:600}
+
+/* ---- stat strip ---- */
+.stats{background:var(--vault-2);color:var(--vault-text);border-bottom:1px solid var(--vault-line);padding-block:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:26px 20px;border-right:1px solid var(--vault-line);display:flex;flex-direction:column;gap:5px}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--font-mono);font-weight:600;font-size:clamp(1.4rem,3.6vw,2.1rem);letter-spacing:-.03em;color:var(--honey-bright)}
+.stat .n.bad{color:var(--crick)}
+.stat .l{font-size:.76rem;line-height:1.3;color:var(--vault-soft)}
+@media(max-width:720px){.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--vault-line)}}
+
+/* ---- section head ---- */
+.shead{max-width:760px;margin-bottom:38px}
+.shead h2{font-size:clamp(1.7rem,4.8vw,2.7rem);margin-top:12px}
+.shead p{font-family:var(--font-serif);font-size:1.12rem;line-height:1.5;color:var(--ink-soft);margin-top:16px}
+
+/* ---- two-lock / why defendable ---- */
+.locks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lock{border:1px solid var(--card-line);border-radius:5px;padding:26px;background:var(--card);display:flex;flex-direction:column;gap:12px}
+.lock .lt{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--honey-ink)}
+.lock h3{font-size:1.5rem}
+.lock p{color:var(--ink-soft);line-height:1.5}
+@media(max-width:680px){.locks{grid-template-columns:1fr}}
+
+/* ---- the machine (two tier) ---- */
+.tier{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.tcard{border:1px solid var(--card-line);border-radius:5px;overflow:hidden;background:var(--card)}
+.tcard .top{padding:20px 24px;border-bottom:1px solid var(--card-line);display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.tcard .top h3{font-size:1.25rem}
+.tcard .top .tag{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--honey-ink)}
+.tcard .body{padding:20px 24px;display:flex;flex-direction:column;gap:12px}
+.tcard .spec{display:flex;gap:10px;font-size:.9rem;color:var(--ink-soft);align-items:baseline}
+.tcard .spec .k{font-family:var(--font-mono);color:var(--honey-ink);font-size:.78rem;min-width:66px;flex:none}
+.flow{font-family:var(--font-mono);font-size:.82rem;color:var(--ink-soft);margin-top:24px;
+  padding:16px 18px;border:1px dashed var(--line-strong);border-radius:5px;line-height:1.9;letter-spacing:.02em}
+.flow b{color:var(--ink)} .flow .ar{color:var(--honey-ink)}
+@media(max-width:680px){.tier{grid-template-columns:1fr}}
+
+/* ---- doctrine rows (deliver / don't) ---- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.col h3{font-size:1.15rem;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.col li{font-size:.95rem;line-height:1.45;color:var(--ink-soft);padding-left:22px;position:relative}
+.col.b li::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:2px;background:var(--bank)}
+.col.c li::before{content:"";position:absolute;left:2px;top:.35em;color:var(--crick);font-weight:700;content:"×"}
+.col.b h3{color:var(--bank)} .col.c h3{color:var(--crick)}
+@media(max-width:680px){.split{grid-template-columns:1fr}}
+
+/* ---- big pull quote (the voice) ---- */
+.voice{background:var(--ink);color:var(--paper)}
+:root[data-theme="dark"] .voice,:root:not([data-theme="light"]) .voice{background:#0e1013}
+.voice .q{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5rem,4.4vw,2.5rem);
+  line-height:1.3;color:var(--paper);text-wrap:balance;max-width:20ch}
+:root[data-theme="dark"] .voice .q{color:var(--vault-text)}
+.voice .q .h{color:var(--honey-bright)}
+.voice .by{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--honey-bright);margin-top:26px}
+.voice .wrap{color:var(--paper)}
+:root:not([data-theme="light"]) .voice .wrap{color:var(--vault-text)}
+
+/* ---- the lane ---- */
+.lane{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.clock{border:1px solid var(--card-line);border-radius:6px;background:var(--card);padding:26px;display:flex;flex-direction:column;gap:18px}
+.clock .big{font-family:var(--font-mono);font-weight:600;font-size:clamp(2.2rem,6vw,3.4rem);color:var(--honey-ink);letter-spacing:-.03em;line-height:1}
+.clock .big small{font-size:.32em;color:var(--ink-faint);letter-spacing:.1em}
+.clock .seg{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--card-line);padding-top:14px}
+.clock .seg .v{font-family:var(--font-mono);color:var(--ink)} .clock .seg .l{color:var(--ink-soft);font-size:.86rem}
+@media(max-width:760px){.lane{grid-template-columns:1fr;gap:26px}}
+
+/* ---- hacks mount (the base to insert into) ---- */
+.slot{border:1px dashed var(--line-strong);border-radius:6px;padding:28px;background:
+   repeating-linear-gradient(45deg,transparent,transparent 11px,color-mix(in srgb,var(--line) 40%,transparent) 11px,color-mix(in srgb,var(--line) 40%,transparent) 12px);
+  text-align:center;color:var(--ink-faint);font-family:var(--font-mono);font-size:.82rem;letter-spacing:.04em}
+.slot b{color:var(--honey-ink)}
+
+/* ---- footer / close ---- */
+.close{background:var(--honey);color:#1a1205}
+:root[data-theme="dark"] .close,:root:not([data-theme="light"]) .close{background:var(--honey)}
+.close h2{font-size:clamp(1.8rem,5.5vw,3rem);color:#1a1205}
+.close .sub{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.2rem,3.4vw,1.7rem);color:#2a1d07;margin-top:14px;max-width:26ch}
+.close .cta-row{margin-top:30px}
+.close .btn-primary{background:#1a1205;color:var(--honey-bright)}
+.close .btn-primary:hover{background:#2a1d07}
+.close .btn-ghost{border-color:#2a1d0755;color:#1a1205}
+.close .btn-ghost:hover{border-color:#1a1205;color:#1a1205}
+footer{background:var(--vault);color:var(--vault-soft);padding-block:40px;border-top:1px solid var(--vault-line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+footer .logo{color:var(--vault-text);margin-bottom:10px}
+footer .fnote{font-family:var(--font-mono);font-size:.68rem;line-height:1.8;color:var(--vault-soft);max-width:48ch}
+footer .fnote b{color:var(--vault-text)}
+footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-bright);letter-spacing:.04em}
+
+.theme-toggle{background:none;border:1px solid var(--vault-line);color:var(--vault-soft);border-radius:4px;
+  font-family:var(--font-mono);font-size:.68rem;padding:6px 10px;cursor:pointer;letter-spacing:.08em;text-transform:uppercase}
+.theme-toggle:hover{color:var(--honey-bright);border-color:var(--honey-bright)}
+
+@media(prefers-reduced-motion:no-preference){
+  [data-rise]{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  [data-rise].in{opacity:1;transform:none}
+}
+:focus-visible{outline:2px solid var(--honey-bright);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<!-- ============ BAR ============ -->
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Mr. Defendable home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l11 4v8.5c0 6.6-4.6 11.6-11 13.2C9.6 26.6 5 21.6 5 15V7z" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--honey-bright)"/><path d="M11 15.5l3.4 3.4L21 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--honey-bright)"/></svg>
+      <span>MR. <b>DEFENDABLE</b></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#pain">The Wall</a>
+      <a href="#machine">The Machine</a>
+      <a href="#defendable">Why Defendable</a>
+      <a href="#lane">The Lane</a>
+      <a href="#model">The Deal</a>
+    </nav>
+    <button class="theme-toggle" id="themeBtn" type="button">Theme</button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Sovereign CRE Intelligence · Verified · Vetted · Defendable</p>
+    <h1>The intelligence comes to the lease.<br>The lease <span class="amp">never leaves.</span></h1>
+    <p class="lede">On-prem underwriting, deal color and the four-pager — for the brokers who actually close. <b>No cloud. No co-pilot. No phoning home.</b> Just math you can bank, on a box that sits on your desk.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#machine">See the machine →</a>
+      <a class="btn btn-ghost" href="#model">Why we cook</a>
+    </div>
+    <div class="creed">
+      <span><b>M</b>eetings</span><span><b>A</b>ppraisals</span><span><b>G</b>oals</span><span><b>I</b>nk</span><span><b>C</b>lose</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAT STRIP (the pain) ============ -->
+<section class="stats" id="pain">
+  <div class="wrap">
+    <div class="stat"><span class="n">+300<small style="font-size:.5em"> bps</small></span><span class="l">Coupon reset — 3.7% money refinancing into ~7% money</span></div>
+    <div class="stat"><span class="n">$539–875B</span><span class="l">CRE debt maturing in 2026, stepping toward a ~$1.26T peak in 2027</span></div>
+    <div class="stat"><span class="n bad">12.2%</span><span class="l">Office CMBS delinquency — a record, above the 2008 peak</span></div>
+    <div class="stat"><span class="n">80%</span><span class="l">Of the market is $2–10M 1031 mom-and-pop — the lane we own</span></div>
+  </div>
+</section>
+
+<!-- ============ WHY DEFENDABLE ============ -->
+<section id="defendable">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">Why Defendable</p>
+      <h2>CRE runs on trust. A lease is privileged.</h2>
+      <p>Nobody uploads the rent roll to a public cloud to get underwritten — the moment the paper leaves the building, the deal is dead and so is the broker. That locks every cloud-API agent out of the real work. Defendable means two things, and they're the same thing.</p>
+    </div>
+    <div class="locks">
+      <div class="lock" data-rise>
+        <span class="lt">Lock 1 · the answer</span>
+        <h3>Bankable</h3>
+        <p>The price survives a lender's debt-yield test and a buyer's return math at today's rate and today's remaining term. Verified, vetted, traceable to real deals — never a benchmark, never a guess. Is it defendable? Is it bankable? That's the only question that ever cleared a deal.</p>
+      </div>
+      <div class="lock" data-rise>
+        <span class="lt">Lock 2 · the paper</span>
+        <h3>Sovereign</h3>
+        <p>The lease never leaves the building. Intelligence comes to the data on local, owned compute — it never phones home, never trains someone else's model, never shows up in a breach. That's the half a cloud can't offer, and the half CRE can't live without.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE MACHINE (two tier) ============ -->
+<section id="machine" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Machine</p>
+      <h2>A box on the desk. A furnace on standby. Nothing in the cloud.</h2>
+      <p>You can't run frontier compute on a laptop, and you can't trust a laptop with a lease. So the edge is its own sealed, cryptographically-identified node — and the heavy cook runs on owned silicon you never have to buy.</p>
+    </div>
+    <div class="tier">
+      <div class="tcard" data-rise>
+        <div class="top"><h3>The Appliance</h3><span class="tag">Edge · on your desk</span></div>
+        <div class="body">
+          <div class="spec"><span class="k">Hardware</span><span>Jetson-class edge node — sips ~30W, always on, always listening</span></div>
+          <div class="spec"><span class="k">Identity</span><span class="mono" style="color:var(--honey-ink)">hack1.onshine.mrdefendable.eth</span></div>
+          <div class="spec"><span class="k">Face</span><span>Windows-easy window + iPhone in your pocket. Never a terminal.</span></div>
+          <div class="spec"><span class="k">Rule</span><span>The books drop in. The underwrite comes out. Data never leaves.</span></div>
+        </div>
+      </div>
+      <div class="tcard" data-rise>
+        <div class="top"><h3>The Fleet</h3><span class="tag">Standby · owned compute</span></div>
+        <div class="body">
+          <div class="spec"><span class="k">Hardware</span><span>RTX PRO 6000 fleet — cooks the strategic model and the heavy underwrite</span></div>
+          <div class="spec"><span class="k">You got mail</span><span>Fires only when the math gets big. Still sovereign, still owned.</span></div>
+          <div class="spec"><span class="k">Not this</span><span>Not a public cloud. Not a co-pilot. Not an $8K DGX dream.</span></div>
+          <div class="spec"><span class="k">Why</span><span>We bring the heat you can't run on a desktop. That's the moat.</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="flow" data-rise>
+      ring ring <span class="ar">→</span> <b>books under NDA</b> <span class="ar">→</span> underwrite on-prem <span class="ar">→</span> proposal <span class="ar">→</span> meeting <span class="ar">→</span> appraisal <span class="ar">→</span> <b>G·I·C</b> <span class="ar">→</span> <b style="color:var(--honey-ink)">steak dinner</b>
+    </p>
+  </div>
+</section>
+
+<!-- ============ THE VOICE (pull quote) ============ -->
+<section class="voice">
+  <div class="wrap" data-rise>
+    <p class="q">Mr. Seller wants a 5-cap, three years left, no renewal? List it with the junior — he'll work six months at your number for crickets. <span class="h">When you get real, I stand ready.</span></p>
+    <p class="by">— The closer's rule · $8B closed · shoe-shine to the top national industrial team</p>
+  </div>
+</section>
+
+<!-- ============ THE LANE + 1031 CLOCK ============ -->
+<section id="lane">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Lane</p>
+      <h2>$2–10M. 1031. Mom-and-pop. The deals that never stop clearing.</h2>
+      <p>Not the trophy towers — the Ford deals. Fragmented, all-cash, private-client, product-specialized. It's 80% of the market and it runs on a clock that never stops ringing.</p>
+    </div>
+    <div class="lane">
+      <div data-rise>
+        <p class="serif" style="font-size:1.12rem;line-height:1.55;color:var(--ink-soft)">A 1031 buyer with boot in escrow <b style="color:var(--ink)">must</b> redeploy — fast, on defendable underwriting of inventory they can't leak. Miss the window, eat the tax. That's not a maybe. That's a deadline, every time, forever. The appliance underwrites the whole identification list overnight, on your desk, and the paper never travels.</p>
+      </div>
+      <div class="clock" data-rise>
+        <div class="big">45 / 180<br><small>DAY 1031 CLOCK</small></div>
+        <div class="seg"><span class="l">Identify replacement</span><span class="v">45 days</span></div>
+        <div class="seg"><span class="l">Close or be taxed</span><span class="v">180 days</span></div>
+        <div class="seg"><span class="l">Underwrite the list</span><span class="v" style="color:var(--bank)">one night</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE DEAL (deliver / don't + model) ============ -->
+<section id="model" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Deal · we're not Sean</p>
+      <h2>We don't run your machine. We take the most painful part off your desk.</h2>
+      <p>We don't want the whole hog. We participate at the one point where a deal lives or dies — the underwrite, the color, the proof — and we leave the relationship, the dials and the close to you. $0 until we're 100% aligned, both ways. Skin in the game where it actually hurts.</p>
+    </div>
+    <div class="split">
+      <div class="col b" data-rise>
+        <h3>What we deliver</h3>
+        <ul>
+          <li>The defendable underwrite — bankable or crickets, with receipts</li>
+          <li>Color on the inventory: the real ones and the slop</li>
+          <li>The four-pager — your bookmaker, for the price of electricity</li>
+          <li>Sovereign compute: edge on the desk, fleet on standby</li>
+          <li>A cryptographic identity that's yours — portable, defendable</li>
+        </ul>
+      </div>
+      <div class="col c" data-rise>
+        <h3>What we don't</h3>
+        <ul>
+          <li>Run your brokerage or own your relationships</li>
+          <li>Make your dials or take your listing or your glory</li>
+          <li>Tax you 50% for a desk like the house does</li>
+          <li>Touch a public cloud or ship a co-pilot that phones home</li>
+          <li>Ask for a split before we've earned it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HACKS MOUNT — the base to insert into ============ -->
+<section id="hacks">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Fleet · coming online</p>
+      <h2>One hack per vertical. Each starts on shine.</h2>
+      <p>Specialist agents — industrial, net-lease, retail, multifamily — each trained on a top-1% operator's book, each earning the desk the only way CRE respects: by closing. Modules insert here.</p>
+    </div>
+    <div class="slot" data-slot="hacks" data-rise>
+      [ <b>hack modules mount here</b> ] — insert per-vertical specialists into <span class="mono">#hacks</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSE ============ -->
+<section class="close">
+  <div class="wrap" data-rise>
+    <p class="eyebrow" style="color:#2a1d07">Mr. Defendable</p>
+    <h2>You can't pre-buy the trust.<br>You earn it on paper that banks.</h2>
+    <p class="sub">When you get real — we stand ready.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:hello@mrdefendable.com">Put a box on my desk →</a>
+      <a class="btn btn-ghost" href="#top">Back to top</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M16 3l11 4v8.5c0 6.6-4.6 11.6-11 13.2C9.6 26.6 5 21.6 5 15V7z" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--honey-bright)"/></svg><span>MR. <b style="color:var(--honey-bright)">DEFENDABLE</b></span></div>
+      <p class="eth">mrd.defendable.eth</p>
+      <p class="fnote" style="margin-top:12px">Verified · Vetted · Defendable<br>Sovereign CRE intelligence for the brokers who actually close.</p>
+    </div>
+    <p class="fnote">
+      <b>The process is the product.</b> Underwriting figures are decision-support, not an appraisal, loan commitment, or offer; every output is traceable to its inputs and stays on-prem. Market data as of October 2026 — sources on request.<br><br>
+      © 2026 Mr. Defendable · Swarm &amp; Bee
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // theme toggle (system → dark → light → system)
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var order=['system','dark','light'];
+  function cur(){try{return localStorage.getItem('md-theme')||'system'}catch(e){return 'system'}}
+  function apply(t){ if(t==='system'){root.removeAttribute('data-theme');} else {root.setAttribute('data-theme',t);} }
+  apply(cur());
+  if(btn){ btn.addEventListener('click',function(){
+    var t=cur(), i=(order.indexOf(t)+1)%order.length, n=order[i];
+    try{localStorage.setItem('md-theme',n)}catch(e){} apply(n);
+    btn.textContent = n==='system'?'Theme':(n==='dark'?'Dark':'Light');
+  }); }
+  // rise-in on scroll
+  if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('[data-rise]').forEach(function(el){io.observe(el)});
+  } else { document.querySelectorAll('[data-rise]').forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
+</body>
+</html>
