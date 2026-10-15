@@ -14,7 +14,7 @@ No build step, no dependencies — just `index.html`. Fonts load from Google Fon
 
 ## Structure
 - `index.html` — the whole page (brand palette "Honey & Ink" locked in the `:root` tokens).
-- Sections, in order: hero → the wall (pain) → why defendable (two locks) → the machine (edge + fleet) → **the ask (live STNL demo)** → the voice → **the climb (hack → contractor → builder)** → the lane (1031 clock) → the deal (deliver/don't) → **hacks mount** → close.
+- Sections, in order: hero → the wall (pain) → why defendable (two locks) → the machine (edge + fleet) → **the ask (live STNL demo)** → the voice → **the climb (hack → contractor → builder)** → the lane (1031 clock) → **the gate (the moat)** → the deal (deliver/don't) → **hacks mount** → close.
 
 ## The Ask demo (`#ask`)
 Client-side STNL demo — the product surface: broker types a plain-English ask → Mr. Defendable returns one intelligence graph per box (credit, lease, owner→entity→person [person gated], debt, exchange→cap, seller signal, comp lineage). No backend; runs on Pages as-is. **Data in `DB` is illustrative, not live records** (fictional entities, person gated on purpose) — swap in a real gated API call where `run()` renders. Add tenants by extending the `DB` object and the `parse()` matchers.

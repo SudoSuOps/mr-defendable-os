@@ -250,6 +250,25 @@ section{padding-block:clamp(52px,8vw,104px)}
 .climb-foot b{color:var(--honey-ink);font-style:normal;font-weight:600}
 @media(max-width:820px){.climb{grid-template-columns:1fr}}
 
+/* ---- the gate (the moat) ---- */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.gcard{border:1px solid var(--card-line);border-radius:6px;background:var(--card);padding:22px;
+  display:flex;flex-direction:column;gap:11px;position:relative;overflow:hidden}
+.gcard::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--line-strong)}
+.gcard.them::before{background:var(--crick)} .gcard.open::before{background:var(--ink-faint)} .gcard.us::before{background:var(--honey-bright)}
+.gcard .gl{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.gcard.us .gl{color:var(--honey-ink)}
+.gcard h3{font-size:1.18rem;line-height:1.1}
+.gcard p{font-size:.9rem;line-height:1.5;color:var(--ink-soft);flex:1}
+.gv{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;align-self:flex-start}
+.gv.bad{background:var(--crick-bg);color:var(--crick)} .gv.neu{background:var(--paper-2);color:var(--ink-faint);border:1px solid var(--line)} .gv.good{background:var(--bank-bg);color:var(--bank)}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.gatekey{margin-top:18px;border:1px solid var(--vault-line);border-radius:8px;background:var(--vault);color:var(--vault-text);
+  padding:24px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.gatekey .kk{font-family:var(--font-mono);font-size:clamp(.82rem,2.4vw,1.02rem);color:var(--honey-bright);letter-spacing:.02em;white-space:nowrap}
+.gatekey .kt{font-family:var(--font-serif);font-size:1.08rem;line-height:1.45;color:color-mix(in srgb,var(--vault-text) 88%,transparent);flex:1;min-width:240px}
+.gatekey .kt b{color:var(--vault-text);font-weight:500}
+
 /* ---- hacks mount (the base to insert into) ---- */
 .slot{border:1px dashed var(--line-strong);border-radius:6px;padding:28px;background:
    repeating-linear-gradient(45deg,transparent,transparent 11px,color-mix(in srgb,var(--line) 40%,transparent) 11px,color-mix(in srgb,var(--line) 40%,transparent) 12px);
@@ -492,6 +511,53 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
         <div class="seg"><span class="l">Close or be taxed</span><span class="v">180 days</span></div>
         <div class="seg"><span class="l">Underwrite the list</span><span class="v" style="color:var(--bank)">one night</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE GATE (the moat) ============ -->
+<section id="gate">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Gate</p>
+      <h2>Open ore. Gated IP. Keyed to you.</h2>
+      <p>Public records are ore — dig all you want, everybody can. The refined intelligence we cook on top of it — the models, the royal jelly, the color — is not for sale and not given away. It's gated to one identity, and it's locked in both directions.</p>
+    </div>
+    <div class="three">
+      <div class="gcard them" data-rise>
+        <span class="gl">The pool</span>
+        <h3>Sell the ore to everyone</h3>
+        <p>Pool everybody's data, license it to any check that clears. Your edge is also your competitor's edge — and they'll still send a letter when you share your own photos.</p>
+        <span class="gv bad">Ungated · now in antitrust</span>
+      </div>
+      <div class="gcard open" data-rise>
+        <span class="gl">The commons</span>
+        <h3>Give the graph away</h3>
+        <p>Fully open, download the whole world. Beautiful for science. But in a knife fight over a listing, an edge that everyone already has is no edge at all.</p>
+        <span class="gv neu">Ungated by design</span>
+      </div>
+      <div class="gcard us" data-rise>
+        <span class="gl">The vault</span>
+        <h3>Gate the IP, free the ore</h3>
+        <p>The public ore moves freely. The intelligence we refine from it — cracked-compute models trained on a real book — is gated to your identity and runs only on your box. Yours alone.</p>
+        <span class="gv good">Gated · yours</span>
+      </div>
+    </div>
+    <div class="locks" style="margin-top:18px">
+      <div class="lock" data-rise>
+        <span class="lt">Locked in · nobody buys it</span>
+        <h3>Not for sale</h3>
+        <p>There's no pool to tap, no seat to license, no feed to resubscribe. A competitor can't buy the color, because we don't sell it — to them or to anyone. The moat isn't a price. It's a gate.</p>
+      </div>
+      <div class="lock" data-rise>
+        <span class="lt">Locked out · nobody leaks it</span>
+        <h3>Can't be extracted</h3>
+        <p>It runs on your appliance, keyed to your <span class="mono" style="color:var(--honey-ink)">.eth</span>. It never phones home, never trains someone else's model, never walks out under NDA. You can't leak it — and neither can a breach.</p>
+      </div>
+    </div>
+    <div class="gatekey" data-rise>
+      <span class="kk">🔑 hackN.onshine.mrdefendable.eth</span>
+      <p class="kt">The key is your identity, and you earn it. <b>$0 until we're 100% aligned — that's the gate, not a discount.</b> Verified, vetted, defendable. Then the vault opens, on your desk, for you.</p>
     </div>
   </div>
 </section>
