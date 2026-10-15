@@ -173,6 +173,20 @@ section{padding-block:clamp(52px,8vw,104px)}
 .clock .seg .v{font-family:var(--font-mono);color:var(--ink)} .clock .seg .l{color:var(--ink-soft);font-size:.86rem}
 @media(max-width:760px){.lane{grid-template-columns:1fr;gap:26px}}
 
+/* ---- the creed band (we read / we know) ---- */
+.creedband{background:
+    radial-gradient(100% 120% at 50% -20%, color-mix(in srgb,var(--honey-bright) 14%,transparent) 0%, transparent 60%),
+    linear-gradient(180deg,var(--vault) 0%,var(--vault-2) 100%);
+  color:var(--vault-text);border-block:1px solid var(--vault-line);text-align:center}
+.creedband .cl{font-family:var(--font-display);font-weight:900;letter-spacing:-.03em;line-height:1.08;
+  font-size:clamp(1.6rem,5.2vw,3rem);text-wrap:balance}
+.creedband .craft{color:color-mix(in srgb,var(--vault-text) 92%,transparent)}
+.creedband .knows{color:var(--honey-bright);margin-top:10px}
+.creedband .knows .d{color:color-mix(in srgb,var(--honey-bright) 45%,var(--vault-soft))}
+.creedband .kick{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.1rem,3vw,1.5rem);
+  color:var(--vault-soft);margin-top:26px;text-wrap:balance}
+.creedband .kick b{color:var(--vault-text);font-style:normal;font-weight:500}
+
 /* ---- the ask (the product surface / STNL demo) ---- */
 .askdev{border:1px solid var(--vault-line);border-radius:10px;overflow:hidden;background:var(--vault);
   color:var(--vault-text);box-shadow:0 24px 60px -30px rgba(0,0,0,.6);margin-top:8px}
@@ -406,6 +420,15 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     <p class="flow" data-rise>
       ring ring <span class="ar">→</span> <b>books under NDA</b> <span class="ar">→</span> underwrite on-prem <span class="ar">→</span> proposal <span class="ar">→</span> meeting <span class="ar">→</span> appraisal <span class="ar">→</span> <b>G·I·C</b> <span class="ar">→</span> <b style="color:var(--honey-ink)">steak dinner</b>
     </p>
+  </div>
+</section>
+
+<!-- ============ THE CREED BAND (we read / we know) ============ -->
+<section class="creedband">
+  <div class="wrap">
+    <p class="cl craft" data-rise>We read. We write. We draft. We map.</p>
+    <p class="cl knows" data-rise>We know the debt.<span class="d"> · </span>We know the term.<span class="d"> · </span>We know the exchange.<span class="d"> · </span>We know the clock.</p>
+    <p class="kick" data-rise>So when the phone rings, <b>Mr. Defendable already has the answer.</b> Nothing left to guess — only to close.</p>
   </div>
 </section>
 
