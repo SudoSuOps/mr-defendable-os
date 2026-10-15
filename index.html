@@ -173,6 +173,59 @@ section{padding-block:clamp(52px,8vw,104px)}
 .clock .seg .v{font-family:var(--font-mono);color:var(--ink)} .clock .seg .l{color:var(--ink-soft);font-size:.86rem}
 @media(max-width:760px){.lane{grid-template-columns:1fr;gap:26px}}
 
+/* ---- the ask (the product surface / STNL demo) ---- */
+.askdev{border:1px solid var(--vault-line);border-radius:10px;overflow:hidden;background:var(--vault);
+  color:var(--vault-text);box-shadow:0 24px 60px -30px rgba(0,0,0,.6);margin-top:8px}
+.askdev .top{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--vault-2);
+  border-bottom:1px solid var(--vault-line)}
+.askdev .dot{width:10px;height:10px;border-radius:50%;background:var(--vault-line);flex:none}
+.askdev .dot.g{background:var(--honey-bright)}
+.askdev .key{margin-left:auto;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--honey-bright);border:1px solid color-mix(in srgb,var(--honey-bright) 35%,transparent);
+  padding:4px 9px;border-radius:999px;white-space:nowrap}
+.askbody{padding:20px 18px}
+.askform{display:flex;gap:10px;flex-wrap:wrap}
+.askform label{position:absolute;left:-9999px}
+.askin{flex:1;min-width:0;background:var(--vault-2);border:1px solid var(--vault-line);border-radius:6px;
+  color:var(--vault-text);font-family:var(--font-display);font-size:1rem;padding:13px 15px;outline:none}
+.askin::placeholder{color:var(--vault-soft)}
+.askin:focus{border-color:var(--honey-bright)}
+.askgo{background:var(--honey-bright);color:#1a1205;border:0;border-radius:6px;font-family:var(--font-display);
+  font-weight:700;font-size:.95rem;padding:0 22px;cursor:pointer;white-space:nowrap;transition:background .15s}
+.askgo:hover{background:#d99a2e}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{background:none;border:1px solid var(--vault-line);color:var(--vault-soft);border-radius:999px;
+  font-family:var(--font-mono);font-size:.72rem;padding:7px 12px;cursor:pointer;transition:all .15s;letter-spacing:.02em}
+.chip:hover{border-color:var(--honey-bright);color:var(--honey-bright)}
+.askstatus{font-family:var(--font-mono);font-size:.8rem;color:var(--honey-bright);margin-top:18px;min-height:1.2em;letter-spacing:.03em}
+.askstatus .mut{color:var(--vault-soft)}
+.askhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:6px;padding-bottom:14px;border-bottom:1px solid var(--vault-line)}
+.askhead h3{font-size:1.3rem;color:var(--vault-text)}
+.askhead .cnt{font-family:var(--font-mono);font-size:.78rem;color:var(--honey-bright)}
+.askhead .knew{font-family:var(--font-serif);font-style:italic;color:var(--vault-soft);font-size:.95rem;margin-left:auto}
+.boxgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.boxcard{border:1px solid var(--vault-line);border-radius:7px;background:var(--vault-2);padding:15px 16px;display:flex;flex-direction:column;gap:9px}
+.boxcard .addr{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.boxcard .addr .a{font-weight:700;font-size:.98rem;color:var(--vault-text)}
+.boxcard .addr .apn{font-family:var(--font-mono);font-size:.62rem;color:var(--vault-soft);white-space:nowrap}
+.boxcard .ln{display:flex;gap:8px;font-size:.82rem;line-height:1.35;color:var(--vault-soft)}
+.boxcard .ln .k{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--honey-bright);min-width:62px;flex:none;padding-top:2px}
+.boxcard .ln .v{color:color-mix(in srgb,var(--vault-text) 90%,transparent)}
+.boxcard .ln .v b{color:var(--vault-text)}
+.boxcard .gated{color:var(--honey-bright);font-family:var(--font-mono);font-size:.7rem}
+.sig{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.sig.hot{background:color-mix(in srgb,var(--crick) 22%,transparent);color:var(--crick)}
+.sig.warm{background:color-mix(in srgb,var(--honey-bright) 20%,transparent);color:var(--honey-bright)}
+.sig.cold{background:color-mix(in srgb,var(--vault-soft) 18%,transparent);color:var(--vault-soft)}
+.askfoot{margin-top:16px;font-family:var(--font-mono);font-size:.72rem;color:var(--vault-soft);line-height:1.7;
+  border-top:1px solid var(--vault-line);padding-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.askfoot b{color:var(--honey-bright)}
+.askfoot .ill{margin-left:auto;color:var(--vault-soft);opacity:.75;font-size:.66rem}
+.waxon{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin-top:22px}
+.waxon b{color:var(--honey-ink);font-style:normal;font-weight:600}
+@media(max-width:680px){.boxgrid{grid-template-columns:1fr}.askgo{flex:1}.askhead .knew{margin-left:0;flex-basis:100%}}
+
 /* ---- the climb (hack → contractor → builder) ---- */
 .climb{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;align-items:stretch}
 .rung{border:1px solid var(--card-line);border-radius:6px;background:var(--card);padding:24px;
@@ -243,6 +296,7 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     <nav class="navlinks">
       <a href="#pain">The Wall</a>
       <a href="#machine">The Machine</a>
+      <a href="#ask">The Ask</a>
       <a href="#climb">The Climb</a>
       <a href="#lane">The Lane</a>
       <a href="#model">The Deal</a>
@@ -333,6 +387,38 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     <p class="flow" data-rise>
       ring ring <span class="ar">→</span> <b>books under NDA</b> <span class="ar">→</span> underwrite on-prem <span class="ar">→</span> proposal <span class="ar">→</span> meeting <span class="ar">→</span> appraisal <span class="ar">→</span> <b>G·I·C</b> <span class="ar">→</span> <b style="color:var(--honey-ink)">steak dinner</b>
     </p>
+  </div>
+</section>
+
+<!-- ============ THE ASK (product surface / STNL demo) ============ -->
+<section id="ask">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Ask · Single-Tenant Net Lease</p>
+      <h2>You ask in plain English. You already have it.</h2>
+      <p>Our IP isn't a database you log into — it's the call you make. One graph per box, pre-computed and gated to your identity: tenant, lease, owner down to the person, the debt, the exchange math, the seller signal. You never touch a database. You never learn Linux. You ask. Try it.</p>
+    </div>
+    <div class="askdev" data-rise>
+      <div class="top">
+        <span class="dot g"></span><span class="dot"></span><span class="dot"></span>
+        <span class="key">🔑 hack7.onshine.mrdefendable.eth</span>
+      </div>
+      <div class="askbody">
+        <form class="askform" id="askForm" autocomplete="off">
+          <label for="askInput">Ask Mr. Defendable</label>
+          <input class="askin" id="askInput" type="text" placeholder="I need a listing — give me every Wawa in Florida, owners too" aria-label="Ask Mr. Defendable">
+          <button class="askgo" id="askGo" type="submit">Ask</button>
+        </form>
+        <div class="chips" id="askChips">
+          <button class="chip" type="button" data-q="Every Wawa in Florida, owners too">Wawa · Florida</button>
+          <button class="chip" type="button" data-q="Dollar General in Georgia with 10+ years term">Dollar General · Georgia</button>
+          <button class="chip" type="button" data-q="7-Eleven in Texas, who's a likely seller">7-Eleven · Texas</button>
+        </div>
+        <p class="askstatus" id="askStatus" aria-live="polite"></p>
+        <div id="askResult" hidden></div>
+      </div>
+    </div>
+    <p class="waxon" data-rise>The ivy-league junior spends six months chasing that color and never gets it. You asked a sentence. <b>Wax on.</b></p>
   </div>
 </section>
 
@@ -503,6 +589,124 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
     document.querySelectorAll('[data-rise]').forEach(function(el){io.observe(el)});
   } else { document.querySelectorAll('[data-rise]').forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
+
+<script>
+/* ===== THE ASK — client-side STNL demo. Data is ILLUSTRATIVE, not live records. ===== */
+(function(){
+  var form=document.getElementById('askForm'), input=document.getElementById('askInput'),
+      chips=document.getElementById('askChips'), status=document.getElementById('askStatus'),
+      result=document.getElementById('askResult');
+  if(!form) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Illustrative per-box STNL graphs. Owner PERSON is gated on purpose (unlocks on the broker's own box).
+  var DB={
+    wawa:{name:"Wawa",state:"FL",total:187,boxes:[
+      {a:"4400 US-1, St. Augustine",apn:"APN 148720-0310",credit:"Wawa corp guaranty · fuel+food · private, strong regional",lease:"18.2 yr left · 1.5%/yr bumps · NNN",owner:"Palmetto Hold LLC → principal on file",debt:"$3.1M CMBS · 4.1% · matures 2027",exch:"FL multifamily seller inbound · needs ~5.75 cap",comp:"3 FL Wawa trades 2025 · 5.4–5.9 (cited to deed)",sig:"hot",sigL:"seller signal: hot"},
+      {a:"1201 S Dale Mabry, Tampa",apn:"APN A-29-1847",credit:"Wawa corp guaranty · high-volume fuel",lease:"12.0 yr left · flat · ground lease",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Institutional buyer pool · 5.25 target",comp:"2 ground-lease comps · 5.1–5.3",sig:"cold",sigL:"seller signal: cold"},
+      {a:"8890 Pines Blvd, Pembroke Pines",apn:"APN 514106-01-0220",credit:"Wawa corp guaranty · new-build",lease:"19.6 yr left · 10%/5yr · NNN",owner:"Coastline Dev Partners LLC → principal on file",debt:"Construction loan rolling to perm",exch:"Merchant developer · built to sell",comp:"New-build FL cap band 5.3–5.6",sig:"hot",sigL:"seller signal: hot"},
+      {a:"2750 N Monroe St, Tallahassee",apn:"APN 11-0845-203",credit:"Wawa corp guaranty",lease:"9.4 yr left · 1.25%/yr · NN",owner:"Family trust → principal on file",debt:"$2.4M local bank · 5.9% · matures 2026",exch:"Short-term paper · refi pressure",comp:"Sub-10yr FL band 6.0–6.5",sig:"warm",sigL:"seller signal: warm"}
+    ]},
+    "dollar general":{name:"Dollar General",state:"GA",total:412,boxes:[
+      {a:"312 Hwy 27 S, Cordele",apn:"APN 0084-015",credit:"Dollar General Corp · BBB (IG)",lease:"11.3 yr left · flat · NN · recent extension",owner:"Pecan Street Holdings LLC → principal on file",debt:"$980K regional bank · 5.4% · matures 2028",exch:"1031 buyer out of apt sale · 6.75 target",comp:"4 GA DG trades 2025 · 6.5–7.1",sig:"warm",sigL:"seller signal: warm"},
+      {a:"1905 Shurling Dr, Macon",apn:"APN M-044-2290",credit:"Dollar General Corp · BBB (IG)",lease:"13.8 yr left · 10%/5yr · NNN",owner:"Out-of-state 1031 buyer · 2yr hold",debt:"Free & clear",exch:"Long clock · not forced",comp:"GA NNN DG band 6.4–6.8",sig:"cold",sigL:"seller signal: cold"},
+      {a:"44 Lumpkin Hwy, Rome",apn:"APN C12-0471",credit:"Dollar General Corp · BBB (IG)",lease:"8.1 yr left · flat · NN",owner:"Developer portfolio (11 GA boxes) → principal on file",debt:"Portfolio CMBS · partial release · 2026 maturity",exch:"Portfolio seller trimming short-term tails",comp:"Sub-10yr GA band 7.0–7.6",sig:"hot",sigL:"seller signal: hot"},
+      {a:"2201 E 1st St, Vidalia",apn:"APN V-0338-11",credit:"Dollar General Corp · BBB (IG)",lease:"14.9 yr left · 10%/5yr · NNN · new store",owner:"Merchant builder → principal on file",debt:"Build-to-sell · perm pending",exch:"Fresh 15yr · premium credit+term",comp:"New GA DG band 6.3–6.6",sig:"warm",sigL:"seller signal: warm"}
+    ]},
+    "7-eleven":{name:"7-Eleven",state:"TX",total:264,boxes:[
+      {a:"6100 Greenville Ave, Dallas",apn:"APN 00000543210",credit:"7-Eleven (SEI) · A-rated (IG) · corp guaranty",lease:"15.5 yr left · 10%/5yr · NNN · fuel",owner:"Lone Star Net Lease LLC → principal on file",debt:"$4.2M agency · 4.6% · matures 2031",exch:"Institutional · 5.0 target",comp:"3 TX 7-Eleven trades · 4.9–5.3",sig:"cold",sigL:"seller signal: cold"},
+      {a:"9440 Westheimer Rd, Houston",apn:"APN 112-443-000-0019",credit:"7-Eleven (SEI) · A-rated (IG)",lease:"7.2 yr left · flat · NN",owner:"Private family (single asset) → principal on file",debt:"$2.9M local · 6.1% · matures 2026",exch:"Refi wall + short term · motivated",comp:"Sub-10yr TX band 5.8–6.4",sig:"hot",sigL:"seller signal: hot"},
+      {a:"1801 S Congress Ave, Austin",apn:"APN 0310050512",credit:"7-Eleven (SEI) · A-rated (IG) · fuel",lease:"17.0 yr left · 7.5%/5yr · NNN",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Core hold · not in market",comp:"TX ground/fuel band 4.8–5.1",sig:"cold",sigL:"seller signal: cold"},
+      {a:"550 N Belt Line Rd, Irving",apn:"APN 32-0880-2-11",credit:"7-Eleven (SEI) · A-rated (IG)",lease:"10.6 yr left · 10%/5yr · NNN",owner:"1031 buyer (sold office 2024) → principal on file",debt:"$3.3M CMBS · 4.9% · matures 2029",exch:"Mid clock · opportunistic seller",comp:"TX NNN band 5.2–5.6",sig:"warm",sigL:"seller signal: warm"}
+    ]}
+  };
+  var STATES={fl:"FL",florida:"FL",ga:"GA",georgia:"GA",tx:"TX",texas:"TX"};
+  var ORDER={hot:0,warm:1,cold:2};
+
+  function parse(q){
+    q=(q||"").toLowerCase();
+    var key=null;
+    if(/wawa/.test(q)) key="wawa";
+    else if(/dollar\s*general|(^|\s)dg(\s|$)/.test(q)) key="dollar general";
+    else if(/7[\s-]*eleven|seven\s*eleven/.test(q)) key="7-eleven";
+    var st=null; for(var k in STATES){ if(new RegExp("\\b"+k+"\\b").test(q)){st=STATES[k];break;} }
+    return {key:key, st:st};
+  }
+
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+
+  function card(b){
+    var c=el('div','boxcard');
+    var addr=el('div','addr');
+    addr.appendChild(el('span','a',b.a));
+    addr.appendChild(el('span','apn',b.apn));
+    c.appendChild(addr);
+    var sig=el('div');sig.style.display='flex';sig.style.gap='6px';sig.style.flexWrap='wrap';
+    sig.appendChild(el('span','sig '+b.sig,b.sigL));
+    c.appendChild(sig);
+    var rows=[['credit',b.credit],['lease',b.lease],['owner',b.owner],['debt',b.debt],['exch→cap',b.exch],['comp',b.comp]];
+    rows.forEach(function(r){
+      var ln=el('div','ln');
+      ln.appendChild(el('span','k',r[0]));
+      var v=el('span','v');
+      if(/principal on file/.test(r[1])){
+        v.appendChild(document.createTextNode(r[1].replace(' → principal on file','')+' → '));
+        v.appendChild(el('span','gated','person gated 🔒'));
+      } else { v.textContent=r[1]; }
+      ln.appendChild(v); c.appendChild(ln);
+    });
+    return c;
+  }
+
+  function render(key,st){
+    var d=DB[key]; result.innerHTML='';
+    var boxes=d.boxes.slice().sort(function(a,b){return ORDER[a.sig]-ORDER[b.sig];});
+    var head=el('div','askhead');
+    var stLabel=st||d.state;
+    head.appendChild(el('h3',null,d.name+' · '+stLabel));
+    head.appendChild(el('span','cnt',d.total+' boxes mapped'));
+    head.appendChild(el('span','knew','— already knew.'));
+    result.appendChild(head);
+    var grid=el('div','boxgrid');
+    boxes.forEach(function(b){grid.appendChild(card(b));});
+    result.appendChild(grid);
+    var foot=el('div','askfoot');
+    foot.innerHTML='<span><b>Top 50 to dial flagged.</b></span><span>gated to your .eth</span><span>underwritten on-prem · never left your box</span><span>comps cited to deed</span>'
+      +'<span class="ill">Illustrative sample — not live records.</span>';
+    result.appendChild(foot);
+    result.hidden=false;
+  }
+
+  function run(q){
+    var p=parse(q);
+    if(!p.key){
+      status.innerHTML='<span class="mut">No STNL credit box matched. Try a tenant — Wawa, Dollar General, 7-Eleven — and a state.</span>';
+      result.hidden=true; return;
+    }
+    var d=DB[p.key], stLabel=p.st||d.state;
+    result.hidden=true;
+    var steps=[
+      'routing to your node…',
+      'pulling '+d.total+' '+d.name+' boxes · '+stLabel+' …',
+      'owner → entity → person · debt · exchange→cap …',
+      'ranking by seller signal …'
+    ];
+    if(reduce){ status.textContent='bam — we got you, hack.'; render(p.key,p.st); return; }
+    var i=0; status.textContent=steps[0];
+    var iv=setInterval(function(){
+      i++;
+      if(i<steps.length){ status.textContent=steps[i]; }
+      else { clearInterval(iv); status.textContent='bam — we got you, hack.'; render(p.key,p.st); }
+    },420);
+  }
+
+  form.addEventListener('submit',function(e){e.preventDefault();run(input.value);});
+  chips.addEventListener('click',function(e){
+    var b=e.target.closest('.chip'); if(!b) return;
+    input.value=b.getAttribute('data-q'); run(input.value);
+  });
 })();
 </script>
 </body>
