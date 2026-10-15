@@ -183,6 +183,9 @@ section{padding-block:clamp(52px,8vw,104px)}
 .creedband .craft{color:color-mix(in srgb,var(--vault-text) 92%,transparent)}
 .creedband .knows{color:var(--honey-bright);margin-top:10px}
 .creedband .knows .d{color:color-mix(in srgb,var(--honey-bright) 45%,var(--vault-soft))}
+.creedband .room{margin-top:14px;color:color-mix(in srgb,var(--vault-text) 92%,transparent)}
+.creedband .room .pass{color:#d9795c;text-decoration:line-through;text-decoration-color:color-mix(in srgb,#d9795c 55%,transparent);text-decoration-thickness:2px}
+.creedband .room .ink{color:var(--honey-bright);font-weight:900}
 .creedband .kick{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.1rem,3vw,1.5rem);
   color:var(--vault-soft);margin-top:26px;text-wrap:balance}
 .creedband .kick b{color:var(--vault-text);font-style:normal;font-weight:500}
@@ -228,6 +231,8 @@ section{padding-block:clamp(52px,8vw,104px)}
 .boxcard .ln .v{color:color-mix(in srgb,var(--vault-text) 90%,transparent)}
 .boxcard .ln .v b{color:var(--vault-text)}
 .boxcard .gated{color:var(--honey-bright);font-family:var(--font-mono);font-size:.7rem}
+.boxcard .pc{font-family:var(--font-mono);font-weight:600;font-size:.68rem;letter-spacing:.05em;padding:3px 10px;border-radius:999px;
+  background:color-mix(in srgb,var(--honey-bright) 22%,transparent);color:var(--honey-bright);white-space:nowrap}
 .sig{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
 .sig.hot{background:color-mix(in srgb,var(--crick) 22%,transparent);color:var(--crick)}
 .sig.warm{background:color-mix(in srgb,var(--honey-bright) 20%,transparent);color:var(--honey-bright)}
@@ -288,6 +293,17 @@ section{padding-block:clamp(52px,8vw,104px)}
    repeating-linear-gradient(45deg,transparent,transparent 11px,color-mix(in srgb,var(--line) 40%,transparent) 11px,color-mix(in srgb,var(--line) 40%,transparent) 12px);
   text-align:center;color:var(--ink-faint);font-family:var(--font-mono);font-size:.82rem;letter-spacing:.04em}
 .slot b{color:var(--honey-ink)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.skill{border:1px solid var(--card-line);border-radius:6px;background:var(--card);padding:20px;display:flex;flex-direction:column;gap:10px}
+.skill .sk-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.skill .sk-no{font-family:var(--font-mono);font-weight:600;font-size:1.05rem;color:var(--honey-ink)}
+.skill .sk-eth{font-family:var(--font-mono);font-size:.58rem;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62%}
+.skill h3{font-size:1.18rem}
+.skill p{font-size:.88rem;line-height:1.46;color:var(--ink-soft);flex:1}
+.skill .sk-out{font-family:var(--font-mono);font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--honey-ink);
+  border-top:1px solid var(--card-line);padding-top:11px;margin-top:2px}
+@media(max-width:820px){.skills{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.skills{grid-template-columns:1fr}}
 
 /* ---- footer / close ---- */
 .close{background:var(--honey);color:#1a1205}
@@ -428,7 +444,8 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
   <div class="wrap">
     <p class="cl craft" data-rise>We read. We write. We draft. We map.</p>
     <p class="cl knows" data-rise>We know the debt.<span class="d"> · </span>We know the term.<span class="d"> · </span>We know the exchange.<span class="d"> · </span>We know the clock.</p>
-    <p class="kick" data-rise>So when the phone rings, <b>Mr. Defendable already has the answer.</b> Nothing left to guess — only to close.</p>
+    <p class="cl room" data-rise>We know the boardroom — the watershed: <span class="pass">the pass</span>, or <span class="ink">the ink</span>.</p>
+    <p class="kick" data-rise>It all rolls into one number — <b>a probability of close</b> — and the list ranks by it. When the phone rings, Mr. Defendable already has the answer. Nothing left to guess — only to close.</p>
   </div>
 </section>
 
@@ -622,12 +639,41 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
 <section id="hacks">
   <div class="wrap">
     <div class="shead" data-rise>
-      <p class="eyebrow">The Fleet · coming online</p>
-      <h2>One hack per vertical. Each starts on shine.</h2>
-      <p>Specialist models — industrial, net-lease, retail, multifamily — each trained on a top-1% operator's book on our own hardware, each earning the desk the only way CRE respects: by closing. Not agents. Not wrappers. Real weights. Modules insert here.</p>
+      <p class="eyebrow">The Skills · The Fleet</p>
+      <h2>Five hacks. One desk.</h2>
+      <p>Each a specialist model, trained on a real top-1% book on our own hardware — not an agent, not a wrapper, real weights — and each gated to its own identity. They run the desk the junior would kill for, and they never clock out.</p>
     </div>
-    <div class="slot" data-slot="hacks" data-rise>
-      [ <b>hack modules mount here</b> ] — insert per-vertical specialists into <span class="mono">#hacks</span>
+    <div class="skills" data-slot="hacks">
+      <div class="skill" data-rise>
+        <div class="sk-top"><span class="sk-no">01</span><span class="sk-eth">hack1.onshine.mrdefendable.eth</span></div>
+        <h3>Book Maker</h3>
+        <p>The four surfaces, about THEM — cover, inside left, inside right, back. Press-ready while the junior's still formatting page 12 of a 50-page trainwreck.</p>
+        <span class="sk-out">Output · the four-pager</span>
+      </div>
+      <div class="skill" data-rise>
+        <div class="sk-top"><span class="sk-no">02</span><span class="sk-eth">hack2.onshine.mrdefendable.eth</span></div>
+        <h3>Legal Digest</h3>
+        <p>Reads the lease like twenty-year counsel: term, options, estoppels, CAM, co-tenancy — and the one clause that quietly kills the deal. On your box, never uploaded.</p>
+        <span class="sk-out">Output · lease red-flags</span>
+      </div>
+      <div class="skill" data-rise>
+        <div class="sk-top"><span class="sk-no">03</span><span class="sk-eth">hack3.onshine.mrdefendable.eth</span></div>
+        <h3>Underwriter</h3>
+        <p>Bankable or crickets, at today's rate and today's term — run through the IC's eyes before you ever bring it to the room. With receipts, cited to the deed.</p>
+        <span class="sk-out">Output · P-close + debt-yield</span>
+      </div>
+      <div class="skill" data-rise>
+        <div class="sk-top"><span class="sk-no">04</span><span class="sk-eth">hack4.onshine.mrdefendable.eth</span></div>
+        <h3>Social Heat Map</h3>
+        <p>Where the capital's hunting right now: comp velocity, demand heat, foot traffic, the submarkets warming up before the crowd ever feels it. Color you can't buy.</p>
+        <span class="sk-out">Output · demand heat by market</span>
+      </div>
+      <div class="skill" data-rise>
+        <div class="sk-top"><span class="sk-no">05</span><span class="sk-eth">hack5.onshine.mrdefendable.eth</span></div>
+        <h3>The Sourcer</h3>
+        <p>The market maker. Matches the MAKER who should sell to the TAKER on the 1031 clock, then ranks the whole list by probability of close. We don't list — we source.</p>
+        <span class="sk-out">Output · the P-close list</span>
+      </div>
     </div>
   </div>
 </section>
@@ -693,22 +739,22 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
   // Illustrative per-box STNL graphs. Owner PERSON is gated on purpose (unlocks on the broker's own box).
   var DB={
     wawa:{name:"Wawa",state:"FL",total:187,boxes:[
-      {a:"4400 US-1, St. Augustine",apn:"APN 148720-0310",credit:"Wawa corp guaranty · fuel+food · private, strong regional",lease:"18.2 yr left · 1.5%/yr bumps · NNN",owner:"Palmetto Hold LLC → principal on file",debt:"$3.1M CMBS · 4.1% · matures 2027",exch:"FL multifamily seller inbound · needs ~5.75 cap",comp:"3 FL Wawa trades 2025 · 5.4–5.9 (cited to deed)",sig:"hot",sigL:"seller signal: hot"},
-      {a:"1201 S Dale Mabry, Tampa",apn:"APN A-29-1847",credit:"Wawa corp guaranty · high-volume fuel",lease:"12.0 yr left · flat · ground lease",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Institutional buyer pool · 5.25 target",comp:"2 ground-lease comps · 5.1–5.3",sig:"cold",sigL:"seller signal: cold"},
-      {a:"8890 Pines Blvd, Pembroke Pines",apn:"APN 514106-01-0220",credit:"Wawa corp guaranty · new-build",lease:"19.6 yr left · 10%/5yr · NNN",owner:"Coastline Dev Partners LLC → principal on file",debt:"Construction loan rolling to perm",exch:"Merchant developer · built to sell",comp:"New-build FL cap band 5.3–5.6",sig:"hot",sigL:"seller signal: hot"},
-      {a:"2750 N Monroe St, Tallahassee",apn:"APN 11-0845-203",credit:"Wawa corp guaranty",lease:"9.4 yr left · 1.25%/yr · NN",owner:"Family trust → principal on file",debt:"$2.4M local bank · 5.9% · matures 2026",exch:"Short-term paper · refi pressure",comp:"Sub-10yr FL band 6.0–6.5",sig:"warm",sigL:"seller signal: warm"}
+      {a:"4400 US-1, St. Augustine",apn:"APN 148720-0310",pc:82,credit:"Wawa corp guaranty · fuel+food · private, strong regional",lease:"18.2 yr left · 1.5%/yr bumps · NNN",owner:"Palmetto Hold LLC → principal on file",debt:"$3.1M CMBS · 4.1% · matures 2027",exch:"FL multifamily seller inbound · needs ~5.75 cap",comp:"3 FL Wawa trades 2025 · 5.4–5.9 (cited to deed)",sig:"hot",sigL:"seller signal: hot"},
+      {a:"1201 S Dale Mabry, Tampa",apn:"APN A-29-1847",pc:24,credit:"Wawa corp guaranty · high-volume fuel",lease:"12.0 yr left · flat · ground lease",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Institutional buyer pool · 5.25 target",comp:"2 ground-lease comps · 5.1–5.3",sig:"cold",sigL:"seller signal: cold"},
+      {a:"8890 Pines Blvd, Pembroke Pines",apn:"APN 514106-01-0220",pc:78,credit:"Wawa corp guaranty · new-build",lease:"19.6 yr left · 10%/5yr · NNN",owner:"Coastline Dev Partners LLC → principal on file",debt:"Construction loan rolling to perm",exch:"Merchant developer · built to sell",comp:"New-build FL cap band 5.3–5.6",sig:"hot",sigL:"seller signal: hot"},
+      {a:"2750 N Monroe St, Tallahassee",apn:"APN 11-0845-203",pc:61,credit:"Wawa corp guaranty",lease:"9.4 yr left · 1.25%/yr · NN",owner:"Family trust → principal on file",debt:"$2.4M local bank · 5.9% · matures 2026",exch:"Short-term paper · refi pressure",comp:"Sub-10yr FL band 6.0–6.5",sig:"warm",sigL:"seller signal: warm"}
     ]},
     "dollar general":{name:"Dollar General",state:"GA",total:412,boxes:[
-      {a:"312 Hwy 27 S, Cordele",apn:"APN 0084-015",credit:"Dollar General Corp · BBB (IG)",lease:"11.3 yr left · flat · NN · recent extension",owner:"Pecan Street Holdings LLC → principal on file",debt:"$980K regional bank · 5.4% · matures 2028",exch:"1031 buyer out of apt sale · 6.75 target",comp:"4 GA DG trades 2025 · 6.5–7.1",sig:"warm",sigL:"seller signal: warm"},
-      {a:"1905 Shurling Dr, Macon",apn:"APN M-044-2290",credit:"Dollar General Corp · BBB (IG)",lease:"13.8 yr left · 10%/5yr · NNN",owner:"Out-of-state 1031 buyer · 2yr hold",debt:"Free & clear",exch:"Long clock · not forced",comp:"GA NNN DG band 6.4–6.8",sig:"cold",sigL:"seller signal: cold"},
-      {a:"44 Lumpkin Hwy, Rome",apn:"APN C12-0471",credit:"Dollar General Corp · BBB (IG)",lease:"8.1 yr left · flat · NN",owner:"Developer portfolio (11 GA boxes) → principal on file",debt:"Portfolio CMBS · partial release · 2026 maturity",exch:"Portfolio seller trimming short-term tails",comp:"Sub-10yr GA band 7.0–7.6",sig:"hot",sigL:"seller signal: hot"},
-      {a:"2201 E 1st St, Vidalia",apn:"APN V-0338-11",credit:"Dollar General Corp · BBB (IG)",lease:"14.9 yr left · 10%/5yr · NNN · new store",owner:"Merchant builder → principal on file",debt:"Build-to-sell · perm pending",exch:"Fresh 15yr · premium credit+term",comp:"New GA DG band 6.3–6.6",sig:"warm",sigL:"seller signal: warm"}
+      {a:"312 Hwy 27 S, Cordele",apn:"APN 0084-015",pc:64,credit:"Dollar General Corp · BBB (IG)",lease:"11.3 yr left · flat · NN · recent extension",owner:"Pecan Street Holdings LLC → principal on file",debt:"$980K regional bank · 5.4% · matures 2028",exch:"1031 buyer out of apt sale · 6.75 target",comp:"4 GA DG trades 2025 · 6.5–7.1",sig:"warm",sigL:"seller signal: warm"},
+      {a:"1905 Shurling Dr, Macon",apn:"APN M-044-2290",pc:19,credit:"Dollar General Corp · BBB (IG)",lease:"13.8 yr left · 10%/5yr · NNN",owner:"Out-of-state 1031 buyer · 2yr hold",debt:"Free & clear",exch:"Long clock · not forced",comp:"GA NNN DG band 6.4–6.8",sig:"cold",sigL:"seller signal: cold"},
+      {a:"44 Lumpkin Hwy, Rome",apn:"APN C12-0471",pc:86,credit:"Dollar General Corp · BBB (IG)",lease:"8.1 yr left · flat · NN",owner:"Developer portfolio (11 GA boxes) → principal on file",debt:"Portfolio CMBS · partial release · 2026 maturity",exch:"Portfolio seller trimming short-term tails",comp:"Sub-10yr GA band 7.0–7.6",sig:"hot",sigL:"seller signal: hot"},
+      {a:"2201 E 1st St, Vidalia",apn:"APN V-0338-11",pc:58,credit:"Dollar General Corp · BBB (IG)",lease:"14.9 yr left · 10%/5yr · NNN · new store",owner:"Merchant builder → principal on file",debt:"Build-to-sell · perm pending",exch:"Fresh 15yr · premium credit+term",comp:"New GA DG band 6.3–6.6",sig:"warm",sigL:"seller signal: warm"}
     ]},
     "7-eleven":{name:"7-Eleven",state:"TX",total:264,boxes:[
-      {a:"6100 Greenville Ave, Dallas",apn:"APN 00000543210",credit:"7-Eleven (SEI) · A-rated (IG) · corp guaranty",lease:"15.5 yr left · 10%/5yr · NNN · fuel",owner:"Lone Star Net Lease LLC → principal on file",debt:"$4.2M agency · 4.6% · matures 2031",exch:"Institutional · 5.0 target",comp:"3 TX 7-Eleven trades · 4.9–5.3",sig:"cold",sigL:"seller signal: cold"},
-      {a:"9440 Westheimer Rd, Houston",apn:"APN 112-443-000-0019",credit:"7-Eleven (SEI) · A-rated (IG)",lease:"7.2 yr left · flat · NN",owner:"Private family (single asset) → principal on file",debt:"$2.9M local · 6.1% · matures 2026",exch:"Refi wall + short term · motivated",comp:"Sub-10yr TX band 5.8–6.4",sig:"hot",sigL:"seller signal: hot"},
-      {a:"1801 S Congress Ave, Austin",apn:"APN 0310050512",credit:"7-Eleven (SEI) · A-rated (IG) · fuel",lease:"17.0 yr left · 7.5%/5yr · NNN",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Core hold · not in market",comp:"TX ground/fuel band 4.8–5.1",sig:"cold",sigL:"seller signal: cold"},
-      {a:"550 N Belt Line Rd, Irving",apn:"APN 32-0880-2-11",credit:"7-Eleven (SEI) · A-rated (IG)",lease:"10.6 yr left · 10%/5yr · NNN",owner:"1031 buyer (sold office 2024) → principal on file",debt:"$3.3M CMBS · 4.9% · matures 2029",exch:"Mid clock · opportunistic seller",comp:"TX NNN band 5.2–5.6",sig:"warm",sigL:"seller signal: warm"}
+      {a:"6100 Greenville Ave, Dallas",apn:"APN 00000543210",pc:22,credit:"7-Eleven (SEI) · A-rated (IG) · corp guaranty",lease:"15.5 yr left · 10%/5yr · NNN · fuel",owner:"Lone Star Net Lease LLC → principal on file",debt:"$4.2M agency · 4.6% · matures 2031",exch:"Institutional · 5.0 target",comp:"3 TX 7-Eleven trades · 4.9–5.3",sig:"cold",sigL:"seller signal: cold"},
+      {a:"9440 Westheimer Rd, Houston",apn:"APN 112-443-000-0019",pc:84,credit:"7-Eleven (SEI) · A-rated (IG)",lease:"7.2 yr left · flat · NN",owner:"Private family (single asset) → principal on file",debt:"$2.9M local · 6.1% · matures 2026",exch:"Refi wall + short term · motivated",comp:"Sub-10yr TX band 5.8–6.4",sig:"hot",sigL:"seller signal: hot"},
+      {a:"1801 S Congress Ave, Austin",apn:"APN 0310050512",pc:15,credit:"7-Eleven (SEI) · A-rated (IG) · fuel",lease:"17.0 yr left · 7.5%/5yr · NNN",owner:"Public net-lease REIT",debt:"Free & clear",exch:"Core hold · not in market",comp:"TX ground/fuel band 4.8–5.1",sig:"cold",sigL:"seller signal: cold"},
+      {a:"550 N Belt Line Rd, Irving",apn:"APN 32-0880-2-11",pc:55,credit:"7-Eleven (SEI) · A-rated (IG)",lease:"10.6 yr left · 10%/5yr · NNN",owner:"1031 buyer (sold office 2024) → principal on file",debt:"$3.3M CMBS · 4.9% · matures 2029",exch:"Mid clock · opportunistic seller",comp:"TX NNN band 5.2–5.6",sig:"warm",sigL:"seller signal: warm"}
     ]}
   };
   var STATES={fl:"FL",florida:"FL",ga:"GA",georgia:"GA",tx:"TX",texas:"TX"};
@@ -732,7 +778,8 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     addr.appendChild(el('span','a',b.a));
     addr.appendChild(el('span','apn',b.apn));
     c.appendChild(addr);
-    var sig=el('div');sig.style.display='flex';sig.style.gap='6px';sig.style.flexWrap='wrap';
+    var sig=el('div');sig.style.display='flex';sig.style.gap='6px';sig.style.flexWrap='wrap';sig.style.alignItems='center';
+    sig.appendChild(el('span','pc','P-close '+b.pc+'%'));
     sig.appendChild(el('span','sig '+b.sig,b.sigL));
     c.appendChild(sig);
     var rows=[['credit',b.credit],['lease',b.lease],['owner',b.owner],['debt',b.debt],['exch→cap',b.exch],['comp',b.comp]];
@@ -751,18 +798,18 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
 
   function render(key,st){
     var d=DB[key]; result.innerHTML='';
-    var boxes=d.boxes.slice().sort(function(a,b){return ORDER[a.sig]-ORDER[b.sig];});
+    var boxes=d.boxes.slice().sort(function(a,b){return b.pc-a.pc;});
     var head=el('div','askhead');
     var stLabel=st||d.state;
     head.appendChild(el('h3',null,d.name+' · '+stLabel));
-    head.appendChild(el('span','cnt',d.total+' boxes mapped'));
+    head.appendChild(el('span','cnt',d.total+' boxes mapped · ranked by P-close'));
     head.appendChild(el('span','knew','— already knew.'));
     result.appendChild(head);
     var grid=el('div','boxgrid');
     boxes.forEach(function(b){grid.appendChild(card(b));});
     result.appendChild(grid);
     var foot=el('div','askfoot');
-    foot.innerHTML='<span><b>Top 50 to dial flagged.</b></span><span>gated to your .eth</span><span>underwritten on-prem · never left your box</span><span>comps cited to deed</span>'
+    foot.innerHTML='<span><b>Top 50 by probability of close.</b></span><span>gated to your .eth</span><span>underwritten on-prem · never left your box</span><span>comps cited to deed</span>'
       +'<span class="ill">Illustrative sample — not live records.</span>';
     result.appendChild(foot);
     result.hidden=false;
