@@ -173,6 +173,30 @@ section{padding-block:clamp(52px,8vw,104px)}
 .clock .seg .v{font-family:var(--font-mono);color:var(--ink)} .clock .seg .l{color:var(--ink-soft);font-size:.86rem}
 @media(max-width:760px){.lane{grid-template-columns:1fr;gap:26px}}
 
+/* ---- the climb (hack → contractor → builder) ---- */
+.climb{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;align-items:stretch}
+.rung{border:1px solid var(--card-line);border-radius:6px;background:var(--card);padding:24px;
+  display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.rung::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--line-strong)}
+.rung.r1::before{background:color-mix(in srgb,var(--honey) 55%,var(--line-strong))}
+.rung.r2::before{background:color-mix(in srgb,var(--honey) 78%,transparent)}
+.rung.r3::before{background:var(--honey-bright)}
+.rung .step{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.rung .step .no{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--honey-ink)}
+.rung .step .arc{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.08em}
+.rung h3{font-size:1.45rem}
+.rung .say{font-family:var(--font-serif);font-size:1rem;line-height:1.5;color:var(--ink-soft)}
+.rung .say b{color:var(--ink);font-weight:500}
+.rung .unlocks{list-style:none;margin:6px 0 0;padding:14px 0 0;border-top:1px solid var(--card-line);
+  display:flex;flex-direction:column;gap:9px}
+.rung .unlocks li{font-size:.88rem;line-height:1.4;color:var(--ink-soft);padding-left:20px;position:relative}
+.rung .unlocks li::before{content:"";position:absolute;left:0;top:.45em;width:8px;height:8px;border-radius:2px;background:var(--honey)}
+.rung .top-line{margin-top:auto}
+.climb-foot{font-family:var(--font-serif);font-style:italic;font-size:1.18rem;line-height:1.5;
+  color:var(--ink);margin-top:26px;max-width:46ch}
+.climb-foot b{color:var(--honey-ink);font-style:normal;font-weight:600}
+@media(max-width:820px){.climb{grid-template-columns:1fr}}
+
 /* ---- hacks mount (the base to insert into) ---- */
 .slot{border:1px dashed var(--line-strong);border-radius:6px;padding:28px;background:
    repeating-linear-gradient(45deg,transparent,transparent 11px,color-mix(in srgb,var(--line) 40%,transparent) 11px,color-mix(in srgb,var(--line) 40%,transparent) 12px);
@@ -219,7 +243,7 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
     <nav class="navlinks">
       <a href="#pain">The Wall</a>
       <a href="#machine">The Machine</a>
-      <a href="#defendable">Why Defendable</a>
+      <a href="#climb">The Climb</a>
       <a href="#lane">The Lane</a>
       <a href="#model">The Deal</a>
     </nav>
@@ -317,6 +341,50 @@ footer .eth{font-family:var(--font-mono);font-size:.72rem;color:var(--honey-brig
   <div class="wrap" data-rise>
     <p class="q">Mr. Seller wants a 5-cap, three years left, no renewal? List it with the junior — he'll work six months at your number for crickets. <span class="h">When you get real, I stand ready.</span></p>
     <p class="by">— The closer's rule · $8B closed · shoe-shine to the top national industrial team</p>
+  </div>
+</section>
+
+<!-- ============ THE CLIMB (hack → contractor → builder) ============ -->
+<section id="climb">
+  <div class="wrap">
+    <div class="shead" data-rise>
+      <p class="eyebrow">The Climb</p>
+      <h2>We don't sell answers. We sell the climb.</h2>
+      <p>Sean capped the junior at the dials and kept the split. Mr. Defendable hands over the whole machine — and says go build. Every rung is a thing he carries for you, so the box doesn't just save you time. It changes what you are.</p>
+    </div>
+    <div class="climb">
+      <div class="rung r1" data-rise>
+        <div class="step"><span class="no">Rung 1</span><span class="arc">on shine</span></div>
+        <h3>The Hack</h3>
+        <p class="say"><b>You still dial.</b> But every call is aimed — who to ring, in what order, why today.</p>
+        <ul class="unlocks top-line">
+          <li>Dials loaded: the list, ranked, with a reason on each</li>
+          <li>Color on inventory — the real ones and the slop</li>
+          <li>Who buys, why they buy, and when they're forced to</li>
+        </ul>
+      </div>
+      <div class="rung r2" data-rise>
+        <div class="step"><span class="no">Rung 2</span><span class="arc">your own tools</span></div>
+        <h3>The Contractor</h3>
+        <p class="say"><b>You stop renting the house's tools.</b> The underwrite and the four-pager run on your box, for the price of electricity.</p>
+        <ul class="unlocks top-line">
+          <li>The defendable underwrite — bankable or crickets, one night</li>
+          <li>The four-pager: your bookmaker, press-ready, about them</li>
+          <li>A sovereign identity that's yours to carry anywhere</li>
+        </ul>
+      </div>
+      <div class="rung r3" data-rise>
+        <div class="step"><span class="no">Rung 3</span><span class="arc">your own shop</span></div>
+        <h3>The Builder</h3>
+        <p class="say"><b>The book compounds into yours.</b> Relationships, deal flow, the graph — it stacks into a shop with your name on it.</p>
+        <ul class="unlocks top-line">
+          <li>A book of business that's yours, not the house's</li>
+          <li>The relationship graph — your closers, your capital</li>
+          <li>Investors who follow you, not the logo on the door</li>
+        </ul>
+      </div>
+    </div>
+    <p class="climb-foot" data-rise>Sean gave dmack a 6 a.m. open and called it a raise. <b>We give you the machine and call it a start.</b></p>
   </div>
 </section>
 

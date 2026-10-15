@@ -14,7 +14,7 @@ No build step, no dependencies — just `index.html`. Fonts load from Google Fon
 
 ## Structure
 - `index.html` — the whole page (brand palette "Honey & Ink" locked in the `:root` tokens).
-- Sections, in order: hero → the wall (pain) → why defendable (two locks) → the machine (edge + fleet) → the voice → the lane (1031 clock) → the deal (deliver/don't) → **hacks mount** → close.
+- Sections, in order: hero → the wall (pain) → why defendable (two locks) → the machine (edge + fleet) → the voice → **the climb (hack → contractor → builder)** → the lane (1031 clock) → the deal (deliver/don't) → **hacks mount** → close.
 
 ## Inserting hacks
 The fleet section (`#hacks`) carries the mount point:
